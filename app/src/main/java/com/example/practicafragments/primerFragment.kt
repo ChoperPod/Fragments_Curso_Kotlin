@@ -17,15 +17,15 @@ class primerFragment : Fragment(R.layout.fragment_primer) {
         val button = view.findViewById<Button>(R.id.btn_nav)
         val resultado = view.findViewById<TextView>(R.id.txt_output)
 
-        setFragmentResultListener("requestKey"){ Key, bundle ->  
+        setFragmentResultListener("requestKey") { Key, bundle ->
             val result = bundle.getString("bundleKey")
             resultado.text = result
         }
 
-        button.setOnClickListener{
+        button.setOnClickListener {
             requireActivity().supportFragmentManager.commit {
-               // add(R.id.fragment_container_view,segundoFragment())//agrega fragmentos encima
-                replace(R.id.fragment_container_view,segundoFragment.newInstance("Alfredo", 27))// reemplaza fragmentos encima del anterior
+                // add(R.id.fragment_container_view,segundoFragment())//agrega fragmentos encima
+                replace(R.id.fragment_container_view, segundoFragment.newInstance("Alfredo", 27))// reemplaza fragmentos encima del anterior
                 addToBackStack("primerFragment")
             }
         }
