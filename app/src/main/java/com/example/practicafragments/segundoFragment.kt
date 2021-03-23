@@ -17,8 +17,11 @@ class segundoFragment : Fragment(R.layout.fragment_segundo) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        nombre = requireArguments().getString(MI_NOMBRE)
-        edad = requireArguments().getInt(MI_EDAD)
+        arguments?.let{ bundle ->
+            nombre = bundle.getString(MI_NOMBRE)
+            edad = bundle.getInt(MI_EDAD)
+        }
+
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

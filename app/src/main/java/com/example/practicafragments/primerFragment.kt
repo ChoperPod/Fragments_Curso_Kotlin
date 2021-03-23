@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.fragment.findNavController
 
 class primerFragment : Fragment(R.layout.fragment_primer) {
 
@@ -23,11 +24,7 @@ class primerFragment : Fragment(R.layout.fragment_primer) {
         }
 
         button.setOnClickListener {
-            requireActivity().supportFragmentManager.commit {
-                // add(R.id.fragment_container_view,segundoFragment())//agrega fragmentos encima
-                replace(R.id.fragment_container_view, segundoFragment.newInstance("Alfredo", 27))// reemplaza fragmentos encima del anterior
-                addToBackStack("primerFragment")
-            }
+            findNavController().navigate(R.id.action_primerFragment_to_segundoFragment)
         }
     }
 }
