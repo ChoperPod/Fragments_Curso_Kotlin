@@ -16,7 +16,7 @@
         android:gravity="center"
         android:layout_gravity = "center"
         android:textSize="24sp"
-        android:text="Primer Fragment" />
+        android:text="Primer Fragmento" />
 
     <Button
         android:id="@+id/btn_nav"
