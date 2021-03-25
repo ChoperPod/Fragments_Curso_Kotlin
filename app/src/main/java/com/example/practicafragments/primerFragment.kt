@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
@@ -24,7 +25,8 @@ class primerFragment : Fragment(R.layout.fragment_primer) {
         }
 
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_primerFragment_to_segundoFragment)
+            val action = primerFragmentDirections.actionPrimerFragmentToSegundoFragment("Alfredo",27)
+            findNavController().navigate(action)
         }
     }
 }

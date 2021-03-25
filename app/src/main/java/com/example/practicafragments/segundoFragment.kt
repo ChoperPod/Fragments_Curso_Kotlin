@@ -10,17 +10,19 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.fragment.navArgs
 
 class segundoFragment : Fragment(R.layout.fragment_segundo) {
     private var nombre: String? = ""
     private var edad: Int? = 0
+    private val args: segundoFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let{ bundle ->
-            nombre = bundle.getString(MI_NOMBRE)
-            edad = bundle.getInt(MI_EDAD)
-        }
+
+            nombre = args.nombre
+            edad = args.edad
+
 
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
